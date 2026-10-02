@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Receipt Generator - GUTS Tour</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2026.7.1/core.js"></script>
+  <script type="py" src="receipt.py"></script>
+</head>
+<body>
+<div class="wrap">
+  <img class="banner" src="header.jpg" alt="Purple sticker collage banner">
+
+  <header class="box">
+    <span class="brand">olivia rodrigo ★ guts tour</span>
+    <nav>
+      <a href="index.html">SKU Generator</a>
+      <a href="receipt.html" class="active">Receipt Generator</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <span class="tag">THE "GUTS TOUR" TICKETS</span><span class="tag">available october 1, 2026</span>
+    <h1>ticket<span>booth.</span></h1>
+    <p>Simple. Pick your GUTS Tour tickets, pay in cash, get your receipt.</p>
+  </section>
+
+  <form id="order-form" class="box" onsubmit="return false">
+    <div class="field">
+      <label for="customer">Buyer(s) name</label>
+      <input type="text" id="customer" placeholder="Luisito Balajadia, Nataliya Pabale, Guia Suarez">
+    </div>
+
+    <span class="lbl">Tickets (tick a type, then set the quantity.)</span>
+    <div id="menu-list">
+      <label class="menu-item" data-price="1500">
+        <input type="checkbox">
+        <span class="name">General Audiences</span>
+        <input type="number" class="qty" min="1" value="1">
+        <span class="price">₱1,500</span>
+      </label>
+      <label class="menu-item" data-price="3000">
+        <input type="checkbox">
+        <span class="name">Premium seating</span>
+        <input type="number" class="qty" min="1" value="1">
+        <span class="price">₱3,000</span>
+      </label>
+      <label class="menu-item" data-price="5000">
+        <input type="checkbox">
+        <span class="name">V.I.P.</span>
+        <input type="number" class="qty" min="1" value="1">
+        <span class="price">₱5,000</span>
+      </label>
+    </div>
+
+    <div class="field" style="margin-top:16px">
+      <label for="cash">Cash to pay. (₱)</label>
+      <input type="number" id="cash" placeholder="5000" min="0" step="1">
+    </div>
+
+    <button type="button" py-click="click">Create UR order.</button>
+    <p class="error" id="order-error" role="alert"></p>
+  </form>
+
+  <div class="box result-box" id="receipt-output">UR receipt will show up here.</div>
+
+  <footer class="box"><p style="margin:0">Receipt Generator - Skills Test
+  </p>
+    <p> ★ Liya and Guia's 1st Quarter Project ★</p></footer>
+</div>
+</body>
+</html>

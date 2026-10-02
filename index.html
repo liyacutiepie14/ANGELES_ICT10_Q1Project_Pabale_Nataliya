@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SKU Generator - Olivia Rodrigo's GUTS Tour</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2026.7.1/core.js"></script>
+  <script type="py" src="sku.py"></script>
+</head>
+<body>
+<div class="wrap">
+  <img class="banner" src="header.jpg" alt="Purple sticker collage banner">
+
+  <header class="box">
+    <span class="brand">olivia rodrigo ★ the Guts Tour</span>
+    <nav>
+      <a href="index.html" class="active">SKU Generator</a>
+      <a href="receipt.html">Receipt Generator</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <span class="tag">THE "GUTS TOUR" TICKETS</span><span class="tag">available october 1, 2026</span>
+    <h1>sku<span>generator.</span></h1>
+    <p>Select your ticket type + show location name + stock quantity = one unique 8-character code FOR U.</p>
+  </section>
+
+  <form id="sku" class="box" onsubmit="return false">
+    <div class="field">
+      <label for="category">Ticket type</label>
+      <select id="category">
+        <option value="General Audience">General Audiences</option>
+        <option value="Premium">Premium seating</option>
+        <option value="VIP">V.I.P.</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="product-name">Show location-name</label>
+      <input type="text" id="product-name" placeholder="GUTS Tour Manila">
+    </div>
+    <div class="field">
+      <label for="quantity">Stock quantity (0-999)</label>
+      <input type="number" id="quantity" placeholder="50" min="0" max="999" step="1">
+    </div>
+    <button type="button" py-click="click">Generate ur SKU</button>
+    <p class="error" id="sku-error" role="alert"></p>
+  </form>
+
+  <div class="box result-box" id="sku-result">Your SKU will show up here.</div>
+
+  <footer class="box"><p style="margin:0">THE GUTS TOUR (OR) SKU Generator</p></br>
+   <p> ★ Liya and Guia's 1st Quarter Project ★</p></footer>
+</div>
+</body>
+</html>

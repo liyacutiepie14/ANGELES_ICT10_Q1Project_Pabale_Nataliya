@@ -1,0 +1,80 @@
+:root{--bg:#523182;--ink:#2A1550;--card:#FBF7FF;--pink:#FF8AD0;--mute:#6B5A8E;--err:#B00020}
+*{box-sizing:border-box}
+
+
+body{margin:0;background:var(--bg) url("or.gif.gif") no-repeat center / cover; / min(100vw,736px) auto;color:var(--ink);font-family:'Space Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.5}
+
+.wrap{max-width:560px;margin:0 auto;padding:20px 20px 40px}
+
+.box{background:var(--card);border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:20px;margin-top:22px}
+
+header.box{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 14px;margin-top:0;font-size:14px}
+
+.banner{display:block;width:100%;aspect-ratio:2/1;object-fit:cover;object-position:50% 30%;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);margin-bottom:22px}
+
+.brand{font-weight:700}
+
+nav a{margin-left:14px;color:var(--ink);text-decoration:none;padding-bottom:2px}
+nav a.active{font-weight:700;border-bottom:2px solid var(--pink)}
+
+
+.hero{background:var(--ink);color:#fff;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--pink);padding:24px 20px;margin-top:22px}
+
+.tag{display:inline-block;background:var(--pink);color:var(--ink);font-size:13px;font-weight:700;padding:3px 10px;margin:0 6px 8px 0}
+
+.hero h1{font-size:clamp(44px,13vw,80px);line-height:.92;letter-spacing:-.045em;font-weight:700;margin:12px 0 14px}
+
+
+.hero h1 span{display:block;color:transparent;-webkit-text-stroke:2px #fff}
+
+.hero p{margin:0;color:#DCCBF7;font-size:16px;max-width:36ch}
+
+.field{margin-bottom:16px}
+
+.field label,.lbl{display:block;font-size:14px;color:var(--mute);margin-bottom:6px}
+
+input,select{width:100%;padding:12px;font:inherit;color:var(--ink);background:#fff;border:1.5px solid var(--ink);border-radius:0}
+
+.menu-item{display:flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--ink);padding:10px 12px;margin-bottom:10px}
+
+.menu-item:has(input:checked){background:#F1E6FF}
+.menu-item input[type=checkbox]{width:18px;height:18px;padding:0;accent-color:#7C3AED}
+
+
+.menu-item .name{flex:1;font-weight:500}
+.menu-item .qty{width:64px;padding:6px}
+.menu-item .price{font-weight:700}
+
+
+button{width:100%;font:inherit;font-size:18px;font-weight:700;color:var(--ink);background:var(--pink);border:2px solid var(--ink);border-radius:0;box-shadow:3px 3px 0 var(--ink);padding:14px;margin-top:6px;cursor:pointer}
+button:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #7C3AED;outline-offset:2px}
+
+.error{color:var(--err);min-height:1.5em;margin:10px 0 0;font-size:14px}
+
+.result-box{text-align:center;color:var(--mute)}
+.result-box .k{margin:0;font-size:13px;color:var(--mute)}
+.result-box .code{margin:6px 0;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:42px;font-weight:700;letter-spacing:.1em;color:var(--ink)}
+ 
+
+
+
+
+
+
+
+
+.receipt-holder{margin-top:22px;filter:drop-shadow(4px 4px 0 var(--ink))}
+.receipt{background:#fff;color:var(--ink);font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px;text-align:left;padding:22px 22px 36px;border-top:8px solid var(--pink);-webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/20px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/20px 100%}
+.receipt .stars{margin:0;text-align:center;letter-spacing:.5em;color:#7C3AED;font-size:13px}
+
+.receipt h3{margin:6px 0 2px;text-align:center;font-size:24px;letter-spacing:.12em}
+.receipt .center{text-align:center;margin:0}
+.receipt .small{font-size:12px;color:var(--mute)}
+.receipt hr{border:none;border-top:2px dotted #B79CE6;margin:14px 0}
+
+.receipt .row{display:flex;justify-content:space-between;gap:8px;margin:5px 0}
+.receipt .total{background:#FFD3EE;padding:6px 8px;font-weight:700;font-size:16px;margin:8px 0}
+.receipt .barcode{height:44px;width:80%;margin:14px auto 10px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 5px,var(--ink) 5px 6px,transparent 6px 10px)}
+footer.box{text-align:center;font-size:12px;color:var(--mute);padding:10px}
+@media print{header,footer,.hero,#order-form{display:none}}
